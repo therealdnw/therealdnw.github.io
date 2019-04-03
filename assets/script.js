@@ -1,11 +1,9 @@
-jQuery(function(){
-    jQuery('#home-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
+$(document).ready(function(){
+    $("#home-slider").owlCarousel({
         autoplay: true,
-        dots: true
+        nav: false,
+        dots: true,
+        items: 1,
+        autoHeight: true
     });
-});
-
+  });

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Play:400,700&subset=cyrillic');
-
 html,
 body {
     height: 100%;
@@ -162,7 +160,7 @@ body {
     left: 0;
     position: absolute;
     right: 0;
-    margin-top: 59px;
+    margin-top: 56px;
     margin-left: -40px;
     z-index: 100;
 }
@@ -202,30 +200,66 @@ body {
     overflow: hidden;
 }
 
+#home-slider .owl-dots {
+    align-items: center;
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    height: 13px;
+    position: absolute;
+    width: 100%;
+}
+
+#home-slider .owl-dots button {
+    background: #b0b0b0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-sizing: unset;
+    margin: 0 7px;
+    width: 9px;
+    height: 9px;
+    transition: all .15s ease-in;
+    outline: none;
+}
+
+#home-slider .owl-dots button.active,
+#home-slider .owl-dots button:hover {
+    background: #ffc608;
+    border-color: #FFF;
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+}
+
+/* 
 #home-slider a img {
     width: 100%;
     height: auto;
 }
-#home-slider .slick-dots{
+
+#home-slider .slick-dots {
     bottom: 25px;
     z-index: 100;
 }
-#home-slider .slick-dots li button{
+
+#home-slider .slick-dots li button {
     width: 30px;
     height: 30px;
 }
-#home-slider .slick-dots li button:before{
+
+#home-slider .slick-dots li button:before {
     color: red;
     width: 30px;
     height: 30px;
     font-size: 16px;
 }
-#home-slider .slick-dots li.slick-active button:before{
+
+#home-slider .slick-dots li.slick-active button:before {
     color: blue;
     font-size: 20px;
-}
+} */
 
-.ispuda{
+.ispuda {
     color: #000;
 }
 
@@ -237,7 +271,7 @@ body {
     width: 500px;
 }
 
-.three-buttons a{
+.three-buttons a {
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
@@ -245,10 +279,158 @@ body {
     color: #000;
 }
 
-.three-buttons a:first-child{
+.three-buttons a:first-child {
     border: solid #CCC 1px;
 }
 
-.three-buttons a:hover{
+.three-buttons a:hover {
     border: solid #CCC 1px;
 }
+
+.block-games-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.block-games-list .block-game {
+    box-sizing: border-box;
+    color: #000;
+    margin: 0 10px 20px;
+    position: relative;
+    text-decoration: none;
+    width: calc(20% - 20px);
+    overflow: hidden;
+
+}
+
+.block-games-list .block-game .image {
+    display: block;
+}
+
+.block-games-list .block-game .image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+}
+
+.block-games-list .block-game .card-bottom {
+    bottom: 20px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .25s ease-in;
+    position: absolute;
+    z-index: 1;
+}
+.block-games-list .block-game:hover .card-bottom{
+    bottom: -100px;
+    opacity: 0;
+}
+
+.block-games-list .block-game .card-bottom>* {
+    padding: 7px 14px;
+}
+
+.block-games-list .block-game .card-bottom .card-price {
+    background: #FFF;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.block-games-list .block-game .card-bottom .card-sale {
+    background: #ffc608;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #000;
+}
+
+.block-games-list .block-game::before{
+    background: rgba(0,0,0,0);
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: all .25s ease-in;
+    bottom: 0;
+    z-index: 2;
+}
+.block-games-list .block-game:hover::before{
+    background: rgba(0,0,0,.7);
+}
+
+
+.block-games-list .block-game .card-hover-title{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    text-align: center;
+    transition: all .25s ease-in;
+    z-index: 3;
+    opacity: 0;
+
+}
+.block-games-list .block-game:hover .card-hover-title{
+    opacity: 1;
+}
+.block-games-list .block-game .card-hover-price{
+    background: #ffc608;
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all .25s ease-in;
+    z-index: 3;
+    padding: 5px 10px;
+    border-radius: 20px;
+    opacity: 0;
+
+}
+.block-games-list .block-game:hover .card-hover-price{
+    opacity: 1;
+    bottom: 60px;
+}
+
+/* 
+
+.block-games-list .block-game .card img{
+    width: 250px;
+    height: auto;
+}
+
+.block-games-list .block-game .card .card-bottom{
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+}
+
+.block-games-list .block-game .card .card-bottom .card-price{
+    background-color: #FFF;
+    padding: 7px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.block-games-list .block-game .card .card-bottom .card-sail{
+    background-color: #ffc608;
+    padding: 7px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.block-games-list .block-game .card .card-hover{
+    display: none;
+} */
